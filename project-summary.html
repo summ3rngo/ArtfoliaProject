@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Project Summary </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+	<style>
+
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		
+		h1 {
+			text-align: center;
+			margin: 10px;
+			color: rgb(116, 114, 163);
+
+		}
+
+		body {
+			background-color: rgb(6, 5, 33);
+			min-height: 100%;
+		}
+
+		section div {
+			background-color: rgb(48, 45, 110);
+			margin: 5px;
+			border-radius: 15px;
+		}
+
+		#description, #design-style {
+			min-height: 260px;
+		}
+
+		#wireframe, #scope {
+			min-height: 1000px;
+		}
+
+        #extras, #future {
+            min-height: 530px;
+        }
+
+		section div p, section div h3 {
+			color: white;
+			margin: 10px;
+			line-height: 1.2;
+		}
+
+		section div p {
+			display: inline-block;
+		}
+
+		#color-palette {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.color {
+			height: 50px;
+			width: 50px;
+			border-radius: 50px;
+		}
+
+		#color1 {
+			background-color: rgb(8, 0, 46);
+		}
+
+		#color2 {
+			background-color: rgb(115, 58, 148);
+		}
+
+		#color3 {
+			background-color: rgb(234, 155, 242);
+		}
+
+		#color4 {
+			background-color: rgb(255, 199, 245);
+		}
+
+		#color-name {
+			font-size: 0.5em;
+			color: white;
+		}
+
+		#links a {
+			font-size: 1.0em;
+            margin-right: 10px;
+		}
+
+		#links {
+			line-height: 1.1;
+            display: flex;
+            flex-direction: wrap;
+            padding-left: 5px;
+            
+		}
+
+		#wireframe {
+			overflow: hidden;
+		}
+		#wireframe img {
+			width: 80%;
+			height: 100%;
+			padding: 15px;
+		}
+
+
+        #database {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .img-container {
+            overflow: hidden;
+            background-color: white;
+            margin: 10px 0 10px 0;
+            overflow: hidden;
+            position: relative;
+            height: 80%;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            }
+        
+        #database h3 {
+            margin-top: 10px;
+            text-align: left;
+        }
+
+	</style>
+</head>
+<body>
+
+	<header id="header">
+		<h1 class="col-12"> Summer Ngo's M1 Project Proposal </h1>
+	</header>
+
+	<section class="row justify-content-center">
+		<div id="description" class="col-4 wrapper">
+			<h3> Project Description </h3>
+			<p> <strong> Topic: </strong> My website is going to be a potential social media-like platform for artists to share their artwork, along with ease of creating a community for artists. </p>
+
+			<p> <strong> Audience: </strong> Artists and those who like viewing artwork
+
+		</div>
+
+		<div id="design-style" class="col-7 wrapper">
+			<p> <strong> Design & Style: </strong> Similar to social media platforms like DeviantArt and Pinterest and Instagram combined
+            <p> <strong> CSS Framework: </strong> Bootstrap -- only bootstrap was occasionally used for the grid system and breakpoints </p>
+            <p> <strong> Color Palette </strong> <br> </p> 
+			<p id="color-name"> Primary background color, secondary background color, secondary background color, font color </p>
+			<div id="color-palette">
+				<div id="color1" class="color"></div>
+
+				<div id="color2" class="color"></div>
+
+				<div id="color3" class="color"></div>
+
+				<div id="color4" class="color"></div>
+			</div>
+
+			<div id="links">
+			<a href="https://www.deviantart.com" style="color: white;">DeviantArt</a> <br>
+			<a href="https://www.pinterest.com" style="color: white;">Pinterest</a> <br>
+			<a href="https://www.instagram.com" style="color: white;">Instagram</a>
+
+
+			</div>
+		</div>
+
+		<div id="database" class="col-7 wrapper">
+            <h3> Database </h3>
+            <div class="img-container">
+			    <img src="img/Database-Diagram.png" alt="Database">
+            </div>
+            <p> My database can't really be populated without users logging in and posting. I created an example user called user
+                with email user@gmail.com and pw: User1!, so you can try logging and seeing the posts. All these posts were taken from
+                DeviantArt or Pinterest.
+            </p>
+		</div>
+
+		<div id="scope" class="col-4 wrapper">
+			<h3> Scope </h3>
+			<p> Pages: Home Feed, Signup Page, Login Page, Art Submission Page, Main Page
+
+			<p> <strong> Home Page </strong> <br> The home page has the tile page, a nav bar that let's you sign up or login,
+            it also has an about section that covers the 3 main idea of Sharing, Discovering and Connecting. It also has 
+            a section to discover different topics, and a section of a featured posts. </p>
+
+			<p> <strong> Sign Up Page </strong> <br> This is where users can sign up and register, using email, password, and username </p>
+
+			<p> <strong> Login Page </strong> <br> Returning users can log in </p>
+
+			<p> <strong> Art Submission Page </strong> <br> Artists can post on this page, and it'll get uploaded onto their Main page. </p>
+
+            <p> <strong> Main Page </strong> <br> The main page is similar to instagram's main page, where your post is on the post tab,
+            every post you've liked is on the liked tabs, and saved photos go into your saves tab. It also has your profile with 
+            follower and following count, with an about me section for you to edit.  </p>
+
+            <p> <strong> HOW THE WEBSITE WORKS: </strong> <br> In order to post, you must first be logged in to the website. If you do not have 
+            an account, you can sign up. Then, it'll redirect you to a main page (main.php). This is where you'll see account info (followers,
+            following, and about section). There is also a tab section (similar to instagram and other social media platform), where YOUR posts 
+            goes under the content tab, your liked posts will go under the hearts-tab, and your saved posts will go under the saved tab. Once you post,
+            you can upload a file, write a title and description, along with choosing tags for your post. If successfully uploaded, it will
+            be posted onto your contents tab. Here, you can delete or edit your post (CRUD). </p>
+
+		</div>
+
+        <div id="extras" class="col-6 wrapper">
+			<h3> Project Extras </h3>
+			<p> <strong> 1. Responsive Web Design </strong> I used bootstrap to ensure that boxes in a row lessen as dimensions get smaller, and to make the page 
+            look better when the dimensions get smaller</p>
+
+			<p> <strong> 2. Event-Driven DOM </strong> This part is tied with PHP, where each post has HTML written, and deleting the post
+                would technically delete the nodes. </p>
+            
+            <p> <strong> 3. Sessions/Cookies </strong> Each time a user logs in, a new session is created until they logout </p>
+
+            <p> <strong> 4. File Upload </strong> Users are able to upload a file, and it will be posted </p>
+
+		</div>
+
+		<div id="future" class="col-5 wrapper">
+            <h3> Future Implementation </h3>
+			<p> <-- Homepage --> <br>
+                1. Overlay on the Featured Post <br>
+                2. Add Like (<3) button and maybe even a save button (maybe even a viewer count) <br>
+                3. Change the responsive design when dimension is smaller for Featured Posts <br>
+                4. Fix some of the links <br>
+                5. Fix the airplane message send <br>
+                <br>
+                <-- Main Page --> <br>
+                1. Created a liked posts option and a saved collection (pinterest board perhaps) <br>
+                2. A second nav bar <br>
+                3. Create a separate and nicer post for each post, similar to the featured post on the Homepage <br>
+                4. Have likes and comments on the post <br>
+                5. Track followers and following <br>
+                6. Adding a follow button/message button <br>
+                7. Fix the about me so they can edit and have it saved <br><br>
+                
+                <-- Coding --> <br>
+                1. Certain pages are acessible depending on if they're logged in or not <br>
+                
+            </p>
+
+			</div>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,18 @@
+TO-DO
+
+<-- Homepage -->
+1. Overlay on the Featured Post
+2. Add Like (<3) button and maybe even a save button (maybe even a viewer count)
+3. Change the responsive design when dimension is smaller for Featured Posts
+4. Fix some of the links 
+5. Fix the airplane message send
+
+<-- Main Page -->
+1. Created a liked posts option and a saved collection (pinterest board perhaps)
+2. A second nav bar
+3. Search bar to find users
+4. Fake likes and comments 
+
+<-- Coding -->
+1. Certain pages are acessible depending on if they're logged in or not
+2. 

@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta name="keywords" content="Social Media, Art, Artist, Drawing, Creatives, Post, Share">
+	<meta name="description" content="Social Media Website For Artists To Upload Artwork and View Other Art">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <title>Artfolia Homepage</title>
+    <link rel="stylesheet" href="shared.css">
+
+    <style>
+
+        header {
+            position: relative;
+            background-image: url('img/header.jpeg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 600px;
+        
+            
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 64px;
+            left: 0;
+            width: 100%;
+            height: 536px;
+            background-color: rgba(0, 0, 0, 0.4); 
+            z-index: 1;
+        }
+
+        nav {
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            padding-right: 20px;
+    
+        }
+    
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 15px;
+            padding: 5px 15px 5px 15px;
+            border-radius: 40px;
+            border: 1.5px solid #fff;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+    
+        #log-in {
+            padding: 6.5px 16.5px 6.5px 16.5px;
+            border: none;
+            color: black;
+            background-image: 
+            linear-gradient(
+                to right, 
+                rgb(131, 69, 255),
+                rgb(191, 113, 255) 50%, /* Added color stop */
+                rgb(250, 158, 255)
+                );
+        }
+    
+        #sign-up:hover {
+            background-image: 
+            linear-gradient(
+                to right, 
+                rgb(131, 69, 255),
+                rgb(191, 113, 255) 50%, /* Added color stop */
+                rgb(250, 158, 255)
+                );
+        }
+
+        h2 {
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            top: 40%;
+            z-index: 2;
+        }
+
+        h1, h2, h3 {
+            position: absolute;
+            
+        }
+
+        h3 {
+            left: 50%;
+            transform: translateX(-50%);
+            margin-left: 0;
+            color: white;
+            top: 65%;
+            z-index: 2;
+            text-align: center;
+
+        }
+
+        header p {
+            position: absolute;
+            line-height: 1.5;
+            display: flex;
+            flex-wrap: wrap;
+            top: 72%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            z-index: 2;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        
+        #about-section {
+            background-color:rgb(255, 232, 250);
+            min-height: 500px;
+            padding-top: 50px;
+            padding-bottom: 40px;
+    
+        }
+
+        .card {
+            margin: 0 5px 10px 5px;
+            background-color: white;
+            border: none;
+            min-height: 440px;
+            padding: 30px 0;
+        }
+
+        .card-title {
+            text-align: center;
+            font-size: 3.0em;
+            letter-spacing: 2.5px;
+            font-weight: 600;
+        }
+
+  
+        .material-symbols-outlined {
+            font-size: 3.7em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: 
+            linear-gradient(
+                to right, 
+                rgb(131, 69, 255),
+                rgb(191, 113, 255) 50%, /* Added color stop */
+                rgb(250, 158, 255)
+                );
+            padding: 10px;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+        }
+
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 75px;
+            height: 75px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+
+        }
+
+        .card-text {
+            margin: 0 20px 20px 20px;
+            line-height: 1.5;
+            font-size: 1.2em;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-height: 170px;
+            text-align: center;
+        }
+
+        .button {
+            color: black;
+            background-image: 
+            linear-gradient(
+                to right, 
+                rgb(131, 69, 255),
+                rgb(191, 113, 255) 50%, /* Added color stop */
+                rgb(250, 158, 255)
+            );
+        }
+
+        .btn-click {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            background-image: 
+            linear-gradient(
+                to right, 
+                rgb(131, 69, 255),
+                rgb(191, 113, 255) 50%, /* Added color stop */
+                rgb(250, 158, 255)
+            );
+            padding: 12px;
+            color: white;
+            font-size: 1.5em;
+            font-weight: 700;
+            letter-spacing: 3.0px;
+            border-radius: 25px;
+        }
+
+        #explore-topics-section {
+            min-height: 300px;
+            background-color: black;
+            padding: 5px 15px 5px 15px;
+        }
+
+        #view-all {
+            text-decoration: none;
+            color: rgb(226, 222, 240);
+            font-weight: 600;
+            letter-spacing: 1.3px;
+            margin: 10px 15px 10px 10px;
+            float: right;
+        }
+
+        #view-all:hover {
+            color: rgb(191, 113, 255);
+        }
+
+        #explore-topics-section h4, #featured-section h4 {
+            display: inline-block;
+            margin: 10px 0 10px 10px;
+            font-weight: 300;
+            color: white;
+            letter-spacing: 1.2px;
+        }
+
+        #explore-topics-section a {
+            display: inline-block;
+        }
+
+        #featured-section {
+            min-height: 750px;
+            background-color: black;
+            padding: 5px 15px 5px 15px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        hr {
+            color:rgb(255, 232, 250);
+            width: 100%;
+        }
+        
+        .box-wrapper {
+            width: 80%;
+            height: 600px;
+            margin: 0 auto;
+            margin-top: 10px;
+            border: 1px solid #000;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 0 25px rgb(250, 158, 255, 0.4);
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+
+        }
+
+        .slider-holder {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            
+        }
+
+        .featured-box {
+            flex-basis: 100%;
+            flex-shrink: 0;
+            height: 600px;
+            margin: 0 auto;
+            background-color: #212121;
+            border: 1px solid #000;
+            border-radius: 30px;
+            display: flex;
+            scroll-snap-align: start;
+          
+        }
+
+        .slider-nav {
+            display: flex;
+            column-gap: 1rem;
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .slider-nav a {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            background-color: rgb(255, 232, 250);
+            opacity: 0.75;
+            transition: opacity ease 250ms;
+        }
+
+        .slider-nav a:first-child {
+            opacity: 1;
+        }
+
+        .slider-nav a:hover {
+            opacity: 1;
+        }
+        .image-container {
+            width: 60%;
+            height: 100%;
+            background-color: white;
+            border-radius: 30px 0 0 30px;;
+            overflow: auto;
+            position: relative;
+        }
+
+        .content-container {
+            width: 40%;
+            height: 100%;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .content-container p {
+            margin-bottom: 10px;
+            margin-top: 20px;
+            color: white;
+            font-weight: 500;
+           
+        }
+
+        .profile-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgb(255, 232, 250);
+
+        }
+
+        .post-information {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            gap: 10px;
+        }
+
+        .post-title h5 {
+            color: rgb(255, 232, 250);
+            font-size:1.5em;
+            font-weight: 600;
+        }
+
+        .post-title {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+        }
+
+        .post-title h6 {
+            color: white;
+            font-weight: 300;
+        }
+
+        .comment-profile-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgb(255, 232, 250);
+            flex-shrink: 0;
+
+        }
+
+        .user-info {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            max-width: 330px;
+        }
+
+        .user-info h6 {
+            color: white;
+            padding-top: 5px;
+            font-size: 15px;
+        }
+
+        .user-info span {
+            color: white;
+            padding-top: 3px;
+            font-weight: 300;
+            font-size: 15px;
+        }
+
+        .comments {
+            max-width: 100%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            overflow: auto;
+            max-height: 278px;
+        }
+
+        .comments span {
+            display: inline-block;
+            max-width: 100%;
+            word-wrap: break-word;
+         }
+
+        .comment-box {
+            position: absolute;
+            bottom: 0px;
+            right: 0;
+            height: 75px;
+            width: 100%;
+            border-radius: 0 0 30px 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            border-top: 1px solid rgb(255, 232, 250, 0.3);
+        }   
+
+        .comment-box .comment-profile-icon {
+            width: 40px;
+            height: 40px;
+            margin-left: 15px;
+        }
+
+        .comment-do textarea {
+            border: 1px solid rgb(255, 232, 250, 0.3);
+            background-color: #212121;
+            resize: none;
+            line-height: 1;
+            height: 50px;
+            border-radius: 30px;
+            width: 250px;
+            margin-top: 10px;
+            padding-left: 10px;
+            overflow-y: scroll; 
+            white-space: pre-wrap;
+            padding-top: 16px;
+            color: white;
+        }
+
+        .comment-do textarea::placeholder {
+            color: white;
+        }
+
+        .user-info {
+            margin-bottom: 20px; 
+        }
+        .comment-do textarea:focus {
+            outline: 1.5px solid rgb(250, 158, 255);
+            transition: outline 0.13s ease-out;
+        }
+
+        .comment-box button {
+            background-color: transparent;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+            padding: 0;
+        }
+
+        .comment-box button img {
+            max-width: 40px;
+            max-height: 40px;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+           
+        }
+
+        .box {
+            margin: 5px;
+        }
+        @media (max-width: 795px) { 
+            h1 {
+                font-size: 4.5em;
+            }
+
+            h3 {
+                font-size: 1.3em;
+            }
+
+            header p {
+                font-size: 1.2em;
+            }
+
+
+        }
+
+        @media (max-width: 500px) { 
+            h1 {
+                font-size: 3em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+
+            header p {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+    
+</head>
+
+<body>
+
+<!-- HEADER SECTION -->
+    <header>
+        <nav>
+            <a id="log-in" href="login-page.php">Log In</a>
+            <a id="sign-up" href="signup-page.php">Sign up</a>
+        </nav>
+            <h2> Welcome to </h2>
+            <h1> Artfolia </h1>
+            <h3> Share. Discover. Connect. </h3>
+            <p>Join our vibrant community of artists where you can share your artwork </p>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section id="about-section" class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <div id="share-card" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Share</h5>
+                        <img id="share-icon" class="icon" src="img/share-icon.svg" alt="Share Icon">
+                        <p class="card-text">Sharing art through social media platforms can be a powerful 
+                            way to showcase your work to potential buyers or collaborators. 
+                            Sign up for free and start sharing your artwork today! </p>
+                        <a id="post-button" class="btn-click" href="login-page.php">Post</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <div id="discover-card" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Discover</h5>
+                        <img id="discover-icon" class="icon" src="img/discover-icon.svg" alt="Discover Icon">
+                        <p class="card-text">With our vibrant community of artists and creatives, there's always something 
+                            new and exciting to discover! Discover and explore a wide variety of artwork from around the world! </p>
+                        <a id="explore-button" class="btn-click" href="Discoverpage.html">Explore More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <div id="connect-card" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Connect</h5>
+                        <img id="connect-icon" class="icon" src="img/paper-plane.svg" alt="Connect Icon">
+                        <p class="card-text"> Join groups and communities based on your interests and connect with like-minded 
+                            artists from around the world. Start connecting with other creatives today! </p>
+                        <a id="message-button" class="btn-click" href="#">Message</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPLORE TOPICS SECTION -->
+    <section id="explore-topics-section" class="container-fluid">
+        <h4> Explore <strong> Topics </strong></h4>
+        <span><a id="view-all" href="Discoverpage.html">View All</a></span>
+        <div class="row no-gutters">
+          <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+            <div class="box">
+                <img id="img-1" class="img" src="img/placeholder-1.jpeg" alt="Fan Art">
+                <p class="overlay-text"> Fan Art</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+            <div class="box">
+                <img id="img-2" class="img" src="img/placeholder-2.jpeg" alt="Anime">
+                <p class="overlay-text"> Anime </p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+            <div class="box">
+                <img id="img-3" class="img" src="img/placeholder-3.jpeg" alt="Realism">
+                <p class="overlay-text"> Realism </p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+            <div class="box">
+                <img id="img-4" class="img" src="img/placeholder-4.jpeg" alt="Photography">
+                <p class="overlay-text"> Photography </p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+            <div class="box">
+                <img id="img-5" class="img" src="img/placeholder-5.jpeg" alt="Pixel">
+                <p class="overlay-text"> Pixel</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+            <div class="box">
+                <img id="img-6" class="img" src="img/placeholder-6.jpeg" alt="Fantasy">
+                <p class="overlay-text"> Fantasy </p>
+            </div>
+            </div>
+          </div>
+        <hr>
+      </section>
+
+      <!-- FEATURED SECTION -->
+      <section id="featured-section" class="container-fluid">
+        <h4> Featured <strong> Posts </strong></h4>
+        <div class="box-wrapper">
+        <div class="slider-holder">
+        <div id="feature-box1" class="featured-box">
+            <div class="image-container">
+                <img class="img" src="img/placeholder-7.jpeg" alt="post image">
+              </div>
+              <div class="content-container">
+                <div class="post-information">
+                    <div class="profile-icon">
+                        
+                      </div>
+                    <div class="post-title">
+                        <h5>Post Title</h5>
+                        <h6>by Username</h6>
+                    </div>
+                  </div>
+                  <p>Description of featured art 1.</p>
+                  <hr>
+                  <div class="comments">
+                    <div class="user-info">
+                        <div class="comment-profile-icon"></div>
+                        <h6> User1</h6> <span> Comment 1: Awesome! </span>
+                    </div>
+                    <div class="user-info">
+                        <div class="comment-profile-icon"></div>
+                        <h6> User2</h6> <span> Comment 2: This is Amazing! </span>
+                    </div>
+                    <div class="user-info">
+                        <div class="comment-profile-icon"></div>
+                        <h6> User3</h6> <span> Comment 3: Fantastic Job. </span>
+                    </div>
+                    <div class="user-info">
+                        <div class="comment-profile-icon"></div>
+                        <h6> User4</h6> <span> Comment 4: Really like this piece. </span>
+                    </div>
+                    <div class="user-info">
+                        <div class="comment-profile-icon"></div>
+                        <h6> User5</h6> <span> Comment 5: Can you please do a tutorial? </span>
+                    </div>
+                </div>
+                
+                <div class="comment-box">
+                    <div class="comment-profile-icon"></div>
+                    <form class="comment-do">
+                        <textarea placeholder="Add a comment"></textarea>
+                        <button class="comment-send" type="button">
+                            <img class="comment-default" src="img/comment-send.svg" alt="Submit Button">
+                        </button>
+                    </form>
+              </div>
+            </div>
+        </div>
+
+        <div id="feature-box2" class="featured-box">
+            <div class="image-container">
+                <img class="img" src="img/placeholder-2.jpeg" alt="post image">
+              </div>
+              <div class="content-container">
+                <div class="post-information">
+                    <div class="profile-icon">
+                        
+                      </div>
+                    <div class="post-title">
+                        <h5>Post Title</h5>
+                        <h6>by Username</h6>
+                    </div>
+                  </div>
+                  <p>Description of the featured art 2. </p>
+                  <hr>
+                <div class="comments">
+                    <div class="user-info">
+                        <div class="comment-profile-icon"></div>
+                        <h6> User1</h6> <span> Comment 1: Awesome! </span>
+                    </div>
+                    <div class="user-info">
+                        <div class="comment-profile-icon"></div>
+                        <h6> User2</h6> <span> Comment 2: This is Amazing! </span>
+                    </div>
+                    <div class="user-info">
+                        <div class="comment-profile-icon"></div>
+                        <h6> User3</h6> <span> Comment 3: Fantastic Job. </span>
+                    </div>
+                    <div class="user-info">
+                        <div class="comment-profile-icon"></div>
+                        <h6> User4</h6> <span> Comment 4: Really like this piece. </span>
+                    </div>
+                    <div class="user-info">
+                        <div class="comment-profile-icon"></div>
+                        <h6> User5</h6> <span> Comment 5: Can you please do a tutorial? </span>
+                    </div>
+                </div>
+                
+                <div class="comment-box">
+                    <div class="comment-profile-icon"></div>
+                    <form class="comment-do">
+                        <textarea placeholder="Add a comment"></textarea>
+                        <button class="comment-send" type="submit">
+                            <img class="comment-default" src="img/comment-send.svg" alt="Submit Button">
+                        </button>
+                    </form>
+              </div>
+            </div>
+        </div>
+
+        <div id="feature-box3" class="featured-box">
+            <div class="image-container">
+                <img class="img" src="img/placeholder-1.jpeg" alt="post image">
+              </div>
+              <div class="content-container">
+                <div class="post-information">
+                    <div class="profile-icon">
+                        
+                      </div>
+                    <div class="post-title">
+                        <h5>Post Title</h5>
+                        <h6>by Username</h6>
+                    </div>
+                  </div>
+                  <p>Description of featured art 3</p>
+                  <hr>
+                  <div class="comments">
+                    <div class="user-info">
+                        <div class="comment-profile-icon"></div>
+                        <h6> User1</h6> <span> Comment 1: Awesome! </span>
+                    </div>
+                    <div class="user-info">
+                        <div class="comment-profile-icon"></div>
+                        <h6> User2</h6> <span> Comment 2: This is Amazing! </span>
+                    </div>
+                    <div class="user-info">
+                        <div class="comment-profile-icon"></div>
+                        <h6> User3</h6> <span> Comment 3: Fantastic Job. </span>
+                    </div>
+                    <div class="user-info">
+                        <div class="comment-profile-icon"></div>
+                        <h6> User4</h6> <span> Comment 4: Really like this piece. </span>
+                    </div>
+                    <div class="user-info">
+                        <div class="comment-profile-icon"></div>
+                        <h6> User5</h6> <span> Comment 5: Can you please do a tutorial? </span>
+                    </div>
+                </div>
+                
+                <div class="comment-box">
+                    <div class="comment-profile-icon"></div>
+                    <form class="comment-do">
+                        <textarea placeholder="Add a comment"></textarea>
+                        <button class="comment-send" type="submit">
+                            <img class="comment-default" src="img/comment-send.svg" alt="Submit Button">
+                        </button>
+                    </form>
+              </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="slider-nav">
+        <a href="#feature-box1" onclick="changeOpacity(this)"></a>
+        <a href="#feature-box2" onclick="changeOpacity(this)"></a>
+        <a href="#feature-box3" onclick="changeOpacity(this)"></a>
+    </div>
+
+</div>
+      </section>
+      
+      <footer>
+        <div class="footer-container">
+            <div class="logo">
+              
+            </div>
+            <div class="footer-wrapper">
+            <div class="links">
+              <ul>
+                <li><a href="#about-section">About</a></li>
+                <li><a href="#explore-topics-section">Discover</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+          
+
+                <p> &copy; 2023 Summer Ngo </p>
+            </div>
+        </div>
+      </footer>
+    
+<script>
+    const comment_default = document.querySelectorAll(".comment-default");
+
+    comment_default.forEach(function (comment) {
+    const comment_send = comment.closest(".comment-container").querySelector(".comment-send");
+
+    comment_send.addEventListener("mouseover", function () {
+        comment.src = "img/comment-send-hover.svg";
+        comment.alt = "Comment Hover";
+    });
+
+    comment_send.addEventListener("mouseleave", function () {
+        comment.src = "img/comment-send.svg";
+        comment.alt = "Comment Default";
+    });
+    });
+   
+  function changeOpacity(clickedLink) {
+    document.querySelector('.slider-nav a:first-child').style.removeProperty('opacity');
+    const nav_links = document.querySelectorAll('.slider-nav a');
+    let current_link = clickedLink;
+
+    nav_links.forEach(function(link) {
+      link.style.opacity = '0.75';
+    });
+
+    current_link.style.opacity = '1';
+  }
+
+
+
+
+</script>
+</body>
+</html>
+
