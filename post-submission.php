@@ -1,9 +1,9 @@
 <?php
     echo "HELLO";
     $host = "localhost";
-        $user = "root";
-        $pass = "";
-        $db = "artfolia";
+    $user = "root";
+    $pass = "";
+    $db = "artfolia";
 	// Establish DB Connection
 	$mysqli = new mysqli($host, $user, $pass, $db);
 
@@ -15,6 +15,16 @@
 	}
 
 	$mysqli->set_charset('utf8');
+
+    $set_tags = "INSERT INTO tags (tag_name) VALUES
+    ('adoptables'), ('anime'), ('animal'), ('comic'), ('digital art'), ('fan art'),
+    ('fantasy'), ('game art'), ('photography'), ('pixel'), ('tutorial'), ('wallpaper');";
+    $set_results = $mysqli->query($set_tags);
+    if ($set_results == false) {
+		echo $mysqli->error;
+		$mysqli->close();
+		exit();
+	}
 
     $sql_tags = "SELECT * FROM tags;";
 	$results_tags = $mysqli->query($sql_tags);

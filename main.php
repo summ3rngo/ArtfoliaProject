@@ -6,10 +6,10 @@
          $user_id = $_SESSION['user_id'];
          //echo "WELCOME $username and $user_id";
 
-        $host = "303.itpwebdev.com";
-        $user = "slngo_db_user";
-        $pass = "uscitp2023";
-        $db = "slngo_project_db";
+        $host = "localhost";
+        $user = "root";
+        $pass = "";
+        $db = "artfolia";
 
         // Establish DB Connection
         $mysqli = new mysqli($host, $user, $pass, $db);
