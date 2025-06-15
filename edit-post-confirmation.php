@@ -1,10 +1,10 @@
 <?php 
     session_start(); // start the session
 
-        $host = "303.itpwebdev.com";
-        $user = "slngo_db_user";
-        $pass = "uscitp2023";
-        $db = "slngo_project_db";
+        $host = "localhost";
+        $user = "root";
+        $pass = "";
+        $db = "artfolia";
 
         // Establish DB Connection
         $mysqli = new mysqli($host, $user, $pass, $db);
